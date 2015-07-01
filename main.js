@@ -19,19 +19,21 @@ app.on('window-all-closed', function() {
 // initialization and ready for creating browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 800});
-
+  window = new BrowserWindow({width: 800, height: 800});
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
+  window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js');
+
+  window.loadUrl('file://' + __dirname + '/index.html');
 
   // Open the devtools.
   //mainWindow.openDevTools();
 
   // Emitted when the window is closed.
-  mainWindow.on('closed', function() {
+  window.on('closed', function() {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null;
+    window = null;
   });
 });

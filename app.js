@@ -1,7 +1,6 @@
 if(typeof require !== 'undefined') XLSX = require('xlsx');
 //var workbook = XLSX.readFile('test.xlsx');
 /* DO SOMETHING WITH workbook HERE */
-
 /* set up drag-and-drop event */
 function handleDrop(e) {
   console.log("Hello :)");
